@@ -87,11 +87,7 @@ jobs:
         run: |
           migrate-links -l "$TRANSLATION_LANGUAGES" -y
           node .github/scripts/fix-translated-markdown.js "$TRANSLATION_LANGUAGES"
-          if command -v co-op-review >/dev/null 2>&1; then
-            co-op-review -l "$TRANSLATION_LANGUAGES" --format github
-          else
-            echo "co-op-review is not available in the installed Co-op Translator package; skipping."
-          fi
+          node .github/scripts/filter-co-op-review.js "$TRANSLATION_LANGUAGES"
 
       - name: Remove excluded translations
         run: |
