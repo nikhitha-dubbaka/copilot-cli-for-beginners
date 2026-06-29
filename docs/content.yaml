@@ -43,7 +43,7 @@ home:
   intro:
     img: ch00-welcome.png
     alt: Pip the fox waves hello beside Professor Quill the owl at a cozy desk with a laptop.
-    caption: Meet Pip and Professor Quill - pick a chapter below to get started!
+    caption: Learn with Pip and Professor Quill - pick a chapter below to get started!
     bubbles:
     - lines:
       - Hi, I'm Pip! Ready to learn
@@ -63,9 +63,18 @@ chapters:
 - badge: Chapter 00
   doc: 00-quick-start/README.md
   title: Quick Start
-  subtitle: Install GitHub Copilot CLI (or use Codespaces), sign in, clone the samples, and verify it works.
-  selector: Quick Start · install or Codespaces, sign in, verify
+  subtitle: Install GitHub Copilot CLI, sign in, clone the samples, and verify it works.
+  selector: Quick Start · install, sign in, clone, verify
   panels:
+  - img: objectives.png
+    link: false
+    alt: Professor Quill and Pip stand beside a chalkboard showing a checklist of four green checkmarks.
+    caption: Learning Objectives
+    details:
+    - "In this chapter you will:"
+    - "- Install Copilot CLI"
+    - "- Sign in to your GitHub account"
+    - "- Clone the course samples and run the book app"
   - img: ch00-install.png
     link: '#local-installation'
     alt: Pip gives a thumbs up as software installs onto a laptop.
@@ -154,6 +163,15 @@ chapters:
   subtitle: See Copilot CLI in action, then learn the three interaction modes.
   selector: First Steps · demos & the three modes
   panels:
+  - img: objectives.png
+    link: false
+    alt: Professor Quill and Pip stand beside a chalkboard showing a checklist of four green checkmarks.
+    caption: Learning Objectives
+    details:
+    - "In this chapter you will:"
+    - "- Try a quick code review"
+    - "- Learn the three interaction modes"
+    - "- Use key slash commands"
   - img: ch01-magic.png
     link: '#getting-comfortable-your-first-prompts'
     alt: Pip looks amazed beside Professor Quill as magic sparkles rise from a laptop.
@@ -187,23 +205,20 @@ chapters:
       ty: 330
     terminal:
     - '> Review @samples/book-app-project/book_app.py for code quality'
-    - '# You will learn more about @ and other ways to do reviews later!'
+    - '# You''ll learn more about @ and other ways to do reviews later!'
   - img: ch01-modes.png
     link: '#the-three-modes'
     alt: Professor Quill points at three icons - a map, a waiter, and a drive-through - while Pip thinks.
-    caption: 'Three modes: GPS route, waiter chat, or drive-through'
+    caption: 'Three modes: plan, interactive, or programmatic'
     bubbles:
     - lines:
-      - Plan =
-      - a GPS route.
-      - Interactive =
-      - a waiter chat.
-      - Programmatic =
-      - a drive-through.
+      - Plan = a GPS route.
+      - Interactive = a waiter chat.
+      - Programmatic = a drive-through.
       auto: false
       x: 500
       y: 450
-      w: 358
+      w: 600
       tx: 470
       ty: 610
     - lines:
@@ -213,26 +228,72 @@ chapters:
       tx: 1250
       ty: 195
     terminal:
-    - 'copilot --plan       # Plan - map it out first. Can also use /plan.'
-    - 'copilot              # Interactive - explore and iterate'
-    - 'copilot -p "..."     # Programmatic - one-shot answer'
+    - 'copilot --plan       # Plan out work first (GPS).'
+    - 'copilot              # Interactively prompt and iterate (waiter).'
+    - 'copilot -p "[prompt]"  # Programmatic - one-shot answer (drive-through)'
+  - img: ch01-interactive.png
+    link: '#mode-1-interactive-mode-start-here'
+    alt: Pip chats back and forth at a cafe table with Professor Quill acting as a waiter taking notes.
+    caption: 'Interactive: chat and iterate'
+    bubble:
+      lines:
+      - I remember our chat, so each
+      - prompt builds on the last.
+      w: 640
+      tx: 560
+      ty: 230
+    terminal:
+    - copilot
+    - '> Add type hints to this file'
+    - '...response...'
+    - '> Now make the error handling robust'
+  - img: ch01-plan.png
+    link: '#mode-2-plan-mode'
+    alt: Pip studies a GPS-style map with a numbered route on a laptop before starting.
+    caption: 'Plan: map it out first'
+    bubble:
+      lines:
+      - I create a plan with steps.
+      - Once the plan is in place, I can use it
+      - to guide my coding.
+      w: 700
+      tx: 480
+      ty: 230
+    terminal:
+    - copilot
+    - '> /plan Add a "mark as read" command and tests to validate it'
+  - img: ch01-programmatic.png
+    link: '#mode-3-programmatic-mode'
+    alt: Pip sits in his car at a drive-through, reaching out the window to grab a takeout bag - one order in, one out.
+    caption: 'Programmatic: one-shot answers'
+    bubble:
+      lines:
+      - 'Like a drive-through: one order in,'
+      - one answer out. Great for scripts.
+      w: 900
+      tx: 560
+      ty: 230
+    terminal:
+    - 'copilot -p "How do I read a JSON file in Python?"  # One-shot answer'
   - img: ch01-commands.png
     link: '#essential-slash-commands'
     alt: Pip operates a colorful control panel of buttons.
     caption: Control your session
     bubble:
       lines:
-      - Forgot a command? Type /help.
-      - Switching topics? Use /clear.
-      - All done? Type /exit!
-      w: 640
+      - Forgot a command? 
+      - Type /help.
+      - Switching topics? 
+      - Use /clear.
+      - All done? 
+      - Type /exit!
+      w: 400
       tx: 800
       ty: 320
     terminal:
     - '/help     # show all commands'
     - '/clear    # start a fresh conversation'
     - '/model    # show or switch the AI model'
-    - '/plan     # plan before coding'
     - '/exit     # end the session'
   - img: ch01-next.png
     link: false
@@ -258,6 +319,15 @@ chapters:
   subtitle: Point Copilot at files with the @ symbol, manage context and memory, and resume work across sessions.
   selector: Context · @ symbol, memory & sessions
   panels:
+  - img: objectives.png
+    link: false
+    alt: Professor Quill and Pip stand beside a chalkboard showing a checklist of four green checkmarks.
+    caption: Learning Objectives
+    details:
+    - "In this chapter you will:"
+    - "- Point Copilot at files with the @ symbol"
+    - "- Resume sessions and use persistent memory"
+    - "- Manage the context window"
   - img: ch02-context.png
     link: '#the--syntax'
     alt: Pip gestures while explaining to Professor Quill at a desk with a laptop showing code.
@@ -370,8 +440,8 @@ chapters:
       tx: 1285
       ty: 360
     details:
-    - 'Different from memory: memory carries across all your sessions.'
-    - Context is for this conversation, in a limited window that you can manage.
+    - "Different from memory: memory carries across all your sessions."
+    - "Context is for this conversation, in a limited window that you can manage."
   - img: ch02-context-limit.png
     link: '#check-and-manage-context'
     alt: Pip compacts a tall stack of papers beside a desk with a gauge meter that is nearly full.
@@ -407,6 +477,15 @@ chapters:
   subtitle: Review, refactor, debug, test, and ship code with everyday Copilot workflows.
   selector: Workflows · review, debug, test, ship
   panels:
+  - img: objectives.png
+    link: false
+    alt: Professor Quill and Pip stand beside a chalkboard showing a checklist of four green checkmarks.
+    caption: Learning Objectives
+    details:
+    - "In this chapter you will:"
+    - "- Review, refactor, and debug code"
+    - "- Generate tests for your code"
+    - "- Ship changes with git commits and PRs"
   - img: ch03-workflows.png
     link: '#choose-your-own-adventure'
     alt: Pip stands confidently in a workshop beside Professor Quill wearing a tool belt.
@@ -438,9 +517,13 @@ chapters:
       w: 560
       tx: 560
       ty: 240
-    terminal:
-    - '> Review @samples/book-app-project/book_app.py for code quality'
-    - '# Note: You can also use the /review command to review code. More on that later!'
+    details:
+    - "Here's the actual code Copilot reviews."
+    - "Or use /review for a focused check (more soon)."
+    file_view:
+      label: "See the code"
+      path: "samples/book-app-project/book_app.py"
+      title: "book_app.py"
   - img: ch03-refactor.png
     link: '#separate-concerns'
     alt: Pip tidies tangled code into neat, clean blocks on a laptop screen.
@@ -511,10 +594,19 @@ chapters:
   subtitle: Hire built-in and custom agents, and set project standards once with AGENTS.md.
   selector: Agents · specialists & AGENTS.md
   panels:
+  - img: objectives.png
+    link: false
+    alt: Professor Quill and Pip stand beside a chalkboard showing a checklist of four green checkmarks.
+    caption: Learning Objectives
+    details:
+    - "In this chapter you will:"
+    - "- Pick built-in and custom agents"
+    - "- Combine specialist agents on a task"
+    - "- Set standards with AGENTS.md and instruction files"
   - img: ch04-agents.png
     link: '#new-to-agents-start-here'
-    alt: Pip stands with arms crossed beside specialist icons and Professor Quill.
-    caption: Hire a specialist
+    alt: Professor Quill points at three cards showing a wrench, a lightning bolt, and a paint roller while Pip thinks about which specialist to hire.
+    caption: What is an agent?
     bubbles:
     - lines:
       - An agent is a specialist
@@ -523,11 +615,24 @@ chapters:
       tx: 400
       ty: 210
     - lines:
-      - Right expert,
-      - right task.
-      w: 420
-      tx: 900
-      ty: 500
+      - Each is an expert at
+      - one kind of task.
+      w: 500
+      tx: 1120
+      ty: 300
+    details:
+    - "Like calling a plumber, electrician, or painter - the right pro for each job."
+  - img: ch04-pick.png
+    link: '#interactive-mode'
+    alt: Pip points at a laptop showing a list of agents with the top one highlighted.
+    caption: Pick an agent with /agent
+    bubble:
+      lines:
+      - Type /agent, then
+      - pick one from the list.
+      w: 560
+      tx: 560
+      ty: 260
     terminal:
     - copilot
     - '> /agent          # list and pick an agent'
@@ -551,14 +656,17 @@ chapters:
     caption: Make your own agent
     bubble:
       lines:
-      - Write your own agent in a
-      - simple markdown file.
+      - Write your own custom agent
+      - in a simple markdown file.
       w: 560
-      tx: 600
-      ty: 300
-    terminal:
-    - cp .github/agents/python-reviewer.agent.md \
-    - '   ~/.copilot/agents/'
+      tx: 500
+      ty: 200
+    details:
+    - "A custom agent is just a markdown file you write."
+    file_view:
+      label: "See an example"
+      path: ".github/agents/python-reviewer.agent.md"
+      title: "python-reviewer.agent.md"
   - img: ch04-multiagent.png
     link: '#working-with-multiple-agents'
     alt: Pip and Professor Quill watch three colorful robot agents passing a glowing task token around a laptop.
@@ -578,7 +686,27 @@ chapters:
       ty: 610
     terminal:
     - copilot
-    - '> Have the reviewer and tester agents check this'
+    - '> /agent       # switch to the reviewer'
+    - '> /agent       # then the tester'
+  - img: ch04-scope.png
+    link: '#custom-instruction-files-instructionsmd'
+    alt: Pip points at a laptop showing one instruction document with arrows targeting a Python file and a code file.
+    caption: Target rules to file types
+    bubble:
+      lines:
+      - Each .instructions.md file
+      - applies to the files you choose.
+      w: 640
+      tx: 560
+      ty: 240
+    details:
+    - 'Example: .github/instructions/python-standards.instructions.md'
+    - 'To apply it to a specific file type, use the applyTo field.'
+    - 'Example: applyTo: "**/*.py".'
+    file_view:
+      label: "See an example"
+      path: ".github/instructions/python-standards.instructions.md"
+      title: "python-standards.instructions.md"
   - img: ch04-instructions.png
     link: '#agentsmd'
     alt: Pip gestures toward a laptop with a gear while Professor Quill watches.
@@ -587,23 +715,36 @@ chapters:
     - lines:
       - Put your rules in AGENTS.md.
       w: 560
-      tx: 600
+      tx: 400
       ty: 230
     - lines:
       - Set standards once -
       - Copilot follows them.
       w: 540
       tx: 1300
-      ty: 560
+      ty: 600
     details:
-    - Add an AGENTS.md file to your repo.
-    - Copilot reads and follows it automatically.
+    - "Add an AGENTS.md file to your repo."
+    - "Copilot reads and follows it automatically."
+    file_view:
+      label: "See an example"
+      path: "AGENTS.md"
+      title: "AGENTS.md"
 - badge: Chapter 05
   doc: 05-skills/README.md
   title: Skills
   subtitle: Use built-in skills automatically, call them by name, or build your own.
   selector: Skills · power tools for tasks
   panels:
+  - img: objectives.png
+    link: false
+    alt: Professor Quill and Pip stand beside a chalkboard showing a checklist of four green checkmarks.
+    caption: Learning Objectives
+    details:
+    - "In this chapter you will:"
+    - "- Use skills automatically or by name"
+    - "- Build your own skill"
+    - "- Tell agents, skills, and MCP apart"
   - img: ch05-skills.png
     link: '#understanding-skills'
     alt: Pip holds a power drill beside Professor Quill, with drill bits on a workbench.
@@ -668,9 +809,12 @@ chapters:
       w: 470
       tx: 1180
       ty: 560
-    terminal:
-    - mkdir -p .github/skills/security-audit
-    - '# then add a SKILL.md inside'
+    details:
+    - "A SKILL.md just needs a description and instructions."
+    file_view:
+      label: "See an example"
+      path: ".github/skills/code-checklist/SKILL.md"
+      title: "code-checklist/SKILL.md"
   - img: ch05-vs.png
     link: '#skills-vs-agents-vs-mcp'
     alt: Professor Quill gestures at three glowing icons - an expert badge, a drill bit, and a plug - while Pip compares them.
@@ -689,14 +833,23 @@ chapters:
       tx: 1185
       ty: 250
     details:
-    - Agent = broad expertise. Skill = task steps.
-    - MCP = live data from services (see Chapter 06).
+    - "Agent = broad expertise. Skill = task steps."
+    - "MCP = live data from services (see Chapter 06)."
 - badge: Chapter 06
   doc: 06-mcp-servers/README.md
   title: MCP Servers
   subtitle: Add new powers to Copilot with MCP servers for GitHub, files, and docs.
   selector: MCP Servers · add new powers
   panels:
+  - img: objectives.png
+    link: false
+    alt: Professor Quill and Pip stand beside a chalkboard showing a checklist of four green checkmarks.
+    caption: Learning Objectives
+    details:
+    - "In this chapter you will:"
+    - "- See what MCP servers add"
+    - "- Use the GitHub server and pull in live docs"
+    - "- Add more servers and combine them"
   - img: ch06-mcp.png
     link: '#the-mcp-show-command'
     alt: Pip stands beside Professor Quill as glowing extension icons plug into a power outlet.
@@ -782,6 +935,15 @@ chapters:
   subtitle: Combine everything to go from an idea to a tested, reviewed pull request.
   selector: Putting It Together · idea to PR
   panels:
+  - img: objectives.png
+    link: false
+    alt: Professor Quill and Pip stand beside a chalkboard showing a checklist of four green checkmarks.
+    caption: Learning Objectives
+    details:
+    - "In this chapter you will:"
+    - "- Combine agents, skills, and MCP together"
+    - "- Plan, build, and test a feature"
+    - "- Go from an idea to a merged pull request"
   - img: ch07-orchestra.png
     link: '#idea-to-merged-pr-in-one-session'
     alt: Pip holds a conductor baton beside glowing tool icons and Professor Quill.

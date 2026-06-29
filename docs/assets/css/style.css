@@ -178,8 +178,8 @@ body.home{display:flex;flex-direction:column;min-height:100vh}
 /* per-command copy buttons: real HTML <button>s overlaid on the terminal bar
    (kept OUTSIDE the role="img" panel SVG so they stay keyboard/AT accessible).
    Positioned by % over .panel-wrap, which exactly bounds the fixed-ratio SVG. */
-.panel-wrap{position:relative;display:block}
-.term-copy{position:absolute;margin:0;padding:0 1.2% 0 0;border:0;background:transparent;
+.panel-wrap{position:relative;display:block;container-type:inline-size}
+.term-copy{position:absolute;margin:0;padding:0 1.2cqw 0 0;border:0;background:transparent;
   display:flex;align-items:center;justify-content:flex-end;cursor:pointer;
   -webkit-tap-highlight-color:transparent}
 .term-copy .tc-box{position:relative;height:74%;aspect-ratio:1;display:grid;
@@ -198,6 +198,49 @@ body.home{display:flex;flex-direction:column;min-height:100vh}
 .term-copy.copied .tc-box{border-color:#3fb950}
 /* touch devices have no hover: keep the copy icons visible there */
 @media(hover:none){.term-copy .tc-box{opacity:1}}
+
+/* selectable command text: real HTML drawn over the SVG terminal bar (the SVG
+   paints only the bar + dots). Each line is positioned to sit on the bar and
+   scales with the panel via the cqw font-size set inline. */
+.term-text{position:absolute;inset:0;pointer-events:none}
+.term-text .term-line{position:absolute;display:flex;align-items:center;margin:0;
+  font-family:ui-monospace,Menlo,Consolas,monospace;color:#d1f7c4;line-height:1;
+  white-space:pre;overflow:hidden;cursor:text;pointer-events:auto;
+  -webkit-user-select:text;user-select:text}
+.term-text .term-comment{color:#6e7681}
+
+/* "view file" pill overlaid on a details card, sized in cqw so it scales with
+   the panel (matched to the card's ~1.95cqw prose); opens the matching <dialog>.
+   Kept OUTSIDE the role="img" SVG. */
+.file-view-btn{position:absolute;right:3.2cqw;transform:translateY(-50%);
+  display:inline-flex;align-items:center;gap:0.9cqw;margin:0;cursor:pointer;
+  border:0;border-radius:999px;padding:0.85cqw 1.8cqw;background:var(--teal);color:#fff;
+  font-family:'Poppins',Verdana,Segoe UI,sans-serif;font-weight:600;font-size:1.95cqw;
+  line-height:1;box-shadow:0 0.4cqw 1.1cqw rgba(12,122,122,.32);
+  transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
+  -webkit-tap-highlight-color:transparent}
+.file-view-btn .fv-ico{width:2.3cqw;height:2.3cqw;flex:0 0 auto}
+.file-view-btn:hover{background:#0a6a6a;transform:translateY(-50%) scale(1.03)}
+.file-view-btn:focus{outline:none}
+.file-view-btn:focus-visible{outline:0.4cqw solid var(--focus);outline-offset:0.3cqw}
+
+/* modal file viewer */
+.file-dialog{border:0;border-radius:16px;padding:0;width:min(880px,94vw);
+  max-height:82vh;overflow:hidden;
+  color:var(--ink);background:#fff;box-shadow:0 24px 64px rgba(15,23,42,.4)}
+.file-dialog[open]{display:flex;flex-direction:column}
+.file-dialog::backdrop{background:rgba(15,23,42,.55)}
+.fd-head{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:13px 16px;
+  background:var(--teal);color:#fff}
+.fd-head .fv-ico{width:20px;height:20px;flex:0 0 auto}
+.fd-name{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:600;font-size:1rem}
+.fd-close{margin-left:auto;border:0;background:transparent;color:#fff;cursor:pointer;
+  font-size:1.7rem;line-height:1;padding:0 4px;border-radius:8px}
+.fd-close:hover{background:rgba(255,255,255,.18)}
+.fd-close:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.fd-body{flex:1 1 auto;min-height:0;margin:0;padding:18px 20px;overflow:auto;
+  background:#0d1117;color:#d1f7c4;font-family:ui-monospace,Menlo,Consolas,monospace;
+  font-size:.86rem;line-height:1.55;white-space:pre;tab-size:2}
 /* ===== homepage entrance: the opening panel comes alive on load ===== */
 /* Pure CSS (runs on first paint, no JS). Fill-mode 'both' supplies the hidden
    start state, so removing the animation (reduced motion) leaves things visible. */

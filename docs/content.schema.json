@@ -198,6 +198,17 @@
           "description": "Light teal-accented note card shown in the bottom strip as an alternative to 'terminal' (use one or the other). Plain prose lines - no terminal styling, comments or copy buttons. Good for explainer text that isn't a command.",
           "items": { "type": "string" }
         },
+        "file_view": {
+          "type": "object",
+          "description": "Adds a 'view file' pill on the details card that opens a modal dialog showing a real file's contents (read at build time, embedded in the page). Use to let readers see an example artifact (e.g. an agent or skill file) instead of a copy command.",
+          "additionalProperties": false,
+          "required": ["path"],
+          "properties": {
+            "path": { "type": "string", "description": "File to embed, relative to the project root (the folder that contains docs/). Read at build time." },
+            "label": { "type": "string", "description": "Button text (defaults to 'View <filename>')." },
+            "title": { "type": "string", "description": "Dialog heading (defaults to the file's basename)." }
+          }
+        },
         "link": {
           "description": "Book-icon deep link: a '#anchor' (resolved against the chapter's doc), a path relative to site.source_base_url, an absolute http(s) URL, or false to hide the icon on this frame.",
           "oneOf": [
