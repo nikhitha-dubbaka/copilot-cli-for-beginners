@@ -51,12 +51,14 @@ home:
       w: 624
       tx: 540
       ty: 250
+      delay: 600
     - lines:
       - Greetings! I'm Professor Quill. 
       - I explain the "why" behind each step.
       w: 690
       tx: 1140
       ty: 560
+      delay: 1600
 footer_html: <a href="https://github.com/github/copilot-cli-for-beginners">GitHub
   Copilot CLI for Beginners course</a>
 chapters:
@@ -82,7 +84,7 @@ chapters:
     bubble:
       lines:
       - Got Node.js or Homebrew? One
-      - command and we're up and running!
+      - command and you're up and running!
       w: 720
       tx: 645
       ty: 130
@@ -113,12 +115,13 @@ chapters:
     terminal:
     - copilot
     - '> /login'
+    - '# Requires an active GitHub Copilot subscription'
   - img: ch00-clone.png
     alt: Pip copies a folder of project files onto a laptop from a cloud.
     caption: Clone the sample project
     bubble:
       lines:
-      - Grab the course samples so we
+      - Grab the course samples so you
       - have samples to work with!
       w: 680
       tx: 660
@@ -132,7 +135,7 @@ chapters:
     caption: Verify it works
     bubble:
       lines:
-      - Let's run the sample book app (you'll need Python installed).
+      - Run the sample book app (you'll need Python installed).
       - See 5 books? You're good to go!
       w: 900
       tx: 430
@@ -172,6 +175,7 @@ chapters:
     - "- Try a quick code review"
     - "- Learn the three interaction modes"
     - "- Use key slash commands"
+    - "- Approve the actions Copilot takes"
   - img: ch01-magic.png
     link: '#getting-comfortable-your-first-prompts'
     alt: Pip looks amazed beside Professor Quill as magic sparkles rise from a laptop.
@@ -192,6 +196,7 @@ chapters:
     terminal:
     - copilot
     - '> Explain what a dataclass is in Python in simple terms'
+    - '> Write a function that counts books by genre   # it writes the code, too'
   - img: ch01-review.png
     link: '#demo-1-code-review-in-seconds'
     alt: Pip inspects code bugs on a laptop with a magnifying glass.
@@ -206,6 +211,27 @@ chapters:
     terminal:
     - '> Review @samples/book-app-project/book_app.py for code quality'
     - '# You''ll learn more about @ and other ways to do reviews later!'
+  - img: ch01-permissions.png
+    link: '#permissions'
+    alt: Pip pauses with a raised paw at a laptop showing a glowing security shield with a checkmark while Professor Quill gestures reassuringly.
+    caption: Copilot asks before it acts
+    bubbles:
+    - lines:
+      - Before I run a command or edit
+      - a file, I pause and ask you.
+      w: 620
+      tx: 640
+      ty: 320
+    - lines:
+      - Approve once, or allow all
+      - in projects you trust.
+      w: 520
+      tx: 1180
+      ty: 600
+    terminal:
+    - '> Run the tests for the book app'
+    - '? Allow Copilot to run python -m pytest? (y/n)'
+    - '# /allow-all on   # auto-approve in trusted projects (use with care!)'
   - img: ch01-modes.png
     link: '#the-three-modes'
     alt: Professor Quill points at three icons - a map, a waiter, and a drive-through - while Pip thinks.
@@ -237,7 +263,7 @@ chapters:
     caption: 'Interactive: chat and iterate'
     bubble:
       lines:
-      - I remember our chat, so each
+      - I remember your chat, so each
       - prompt builds on the last.
       w: 640
       tx: 560
@@ -295,6 +321,7 @@ chapters:
     - '/clear    # start a fresh conversation'
     - '/model    # show or switch the AI model'
     - '/exit     # end the session'
+    - '!git status  # ! runs a shell command directly, no AI'
   - img: ch01-next.png
     link: false
     alt: Pip waves goodbye beside Professor Quill while walking toward a glowing arrow.
@@ -385,7 +412,7 @@ chapters:
     bubbles:
     - lines:
       - Stopped for the day?
-      - Pick up where we left off.
+      - Pick up where you left off.
       w: 560
       tx: 640
       ty: 210
@@ -434,7 +461,7 @@ chapters:
       tx: 360
       ty: 640
     - lines:
-      - Our chat, plus the
+      - Your chat, plus the
       - files you've shown me.
       w: 470
       tx: 1285
@@ -457,6 +484,7 @@ chapters:
     - '> /context     # see how full the window is'
     - '> /compact     # summarize to free up space'
     - '> /new         # create a new session'
+    - '> /rewind      # roll back to an earlier point'
   - img: ch02-images.png
     link: '#working-with-images'
     alt: Pip holds up a framed screenshot of an app interface and inspects it with a magnifying glass next to a laptop.
@@ -586,8 +614,24 @@ chapters:
       ty: 250
     terminal:
     - 'git add .       # stage your changes first'
+    - '> /diff         # review everything you changed this session'
     - '> Generate a commit message for my staged changes'
     - '> /pr           # open a pull request for this branch'
+  - img: ch03-delegate.png
+    link: '#using-delegate-for-background-tasks'
+    alt: Pip keeps working at his laptop while a friendly robot carries a glowing task token off toward a cloud and a server in the background.
+    caption: Delegate work to the background
+    bubble:
+      lines:
+      - Hand off a task to GitHub cloud agent 
+      - and it'll work on it in
+      - the background and open a PR.
+      w: 780
+      tx: 430
+      ty: 380
+    terminal:
+    - copilot
+    - '> /delegate Add input validation to the book app'
 - badge: Chapter 04
   doc: 04-agents-custom-instructions/README.md
   title: Agents and Custom Instructions
@@ -688,6 +732,20 @@ chapters:
     - copilot
     - '> /agent       # switch to the reviewer'
     - '> /agent       # then the tester'
+  - img: ch04-init.png
+    link: '#quick-setup-with-init'
+    alt: Pip presses a glowing button on a laptop and configuration file icons spill out and arrange themselves on the desk.
+    caption: Set up your project with /init
+    bubble:
+      lines:
+      - New project? Run /init and I
+      - scaffold your config files for you.
+      w: 720
+      tx: 470
+      ty: 330
+    terminal:
+    - copilot
+    - '> /init      # scan the project and create instruction files'
   - img: ch04-scope.png
     link: '#custom-instruction-files-instructionsmd'
     alt: Pip points at a laptop showing one instruction document with arrows targeting a Python file and a code file.
@@ -815,6 +873,20 @@ chapters:
       label: "See an example"
       path: ".github/skills/code-checklist/SKILL.md"
       title: "code-checklist/SKILL.md"
+  - img: ch05-community.png
+    link: '#finding-and-using-community-skills'
+    alt: Pip holds a drill bit beside a tall shelf stocked with many ready-made bits while Professor Quill gestures toward the shelf.
+    caption: Install community skills
+    bubble:
+      lines:
+      - Don't build every skill yourself -
+      - install a ready-made one!
+      w: 640
+      tx: 540
+      ty: 300
+    terminal:
+    - '> /plugin marketplace      # browse installable skills and agents'
+    - 'gh skill install github/awesome-copilot   # add a community skill'
   - img: ch05-vs.png
     link: '#skills-vs-agents-vs-mcp'
     alt: Professor Quill gestures at three glowing icons - an expert badge, a drill bit, and a plug - while Pip compares them.
@@ -910,6 +982,7 @@ chapters:
       ty: 300
     terminal:
     - '> /mcp search    # browse and add servers'
+    - '# e.g. add a filesystem server to read and write local files'
   - img: ch06-workflow.png
     link: '#multi-server-workflows'
     alt: Pip thinks beside a laptop with glowing icons while Professor Quill looks on.
@@ -963,6 +1036,7 @@ chapters:
       ty: 500
     terminal:
     - copilot
+    - '> Summarize this codebase so I can start contributing'
     - '> Plan a feature, then build it step by step'
   - img: ch07-idea.png
     link: '#the-integration-pattern'

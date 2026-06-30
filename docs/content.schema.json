@@ -235,7 +235,8 @@
         "ty": { "type": "number", "description": "Speaker head Y (panel px); the tail points here." },
         "x": { "type": "number", "description": "Manual bubble X (panel px). Usually omit and let auto-placement choose." },
         "y": { "type": "number", "description": "Manual bubble Y (panel px). Usually omit and let auto-placement choose." },
-        "auto": { "type": "boolean", "description": "Auto-place the bubble (default true). Set false to force the manual x/y." }
+        "auto": { "type": "boolean", "description": "Auto-place the bubble (default true). Set false to force the manual x/y." },
+        "delay": { "type": "number", "minimum": 0, "description": "Optional reveal delay in milliseconds (e.g. 1000, 2000). Sets the bubble's animation-delay inline, overriding any default stagger. Omit to use the engine default." }
       }
     }
   }
