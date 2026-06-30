@@ -492,7 +492,7 @@ Discover installed skills, find community skills, and share your own.
 
 ## Managing Skills with the `copilot skill` Command and `/skills`
 
-Copilot CLI gives you two ways to manage skills — one from your terminal before starting Copilot, and one from inside a Copilot session.
+Copilot CLI gives you two ways to manage skills. You can do it directly from the terminal before starting Copilot or from inside a Copilot session.
 
 ### Option 1: `copilot skill` (Terminal Command)
 
