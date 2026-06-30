@@ -718,10 +718,10 @@ copilot
 # Now you're in a new session copy. Try your alternative approach:
 > Fix find_by_author using a different regex-based strategy
 
-# If you don't like the result, switch back to your original session
+# If you don't like the result, switch back to your original session using /session
 ```
 
-> 💡 **`/branch` and `/fork` are the same**: Both commands do identical things. `/branch` was added as a more intuitive name — use whichever makes more sense to you.
+> 💡 **`/branch` and `/fork` are the same**: Both commands do identical things. `/branch` was added as a more intuitive name. Use whichever makes more sense to you.
 
 > 💡 **When to branch**: Branching is great when you're unsure which approach is better and want to keep both options open.
 
