@@ -486,6 +486,22 @@ Here are some common patterns:
 
 > 💡 **Tip**: Wrap the glob pattern in quotes (e.g., `"**/*.py"`) to ensure it is interpreted correctly across all operating systems and shells.
 
+#### Importing Other Files with `@`
+
+You can reference another file inside `AGENTS.md` or any instruction file using `@filepath` syntax. Copilot expands the reference and includes that file's content automatically, so you can keep your main file short while storing the details elsewhere:
+
+```markdown
+<!-- AGENTS.md -->
+# Project Instructions
+
+@.github/instructions/python-standards.instructions.md
+@.github/instructions/test-standards.instructions.md
+```
+
+This is handy when your instructions grow large. Split them into focused files and `@`-import them from a single `AGENTS.md`. The same syntax works inside `.github/copilot-instructions.md` and other instruction files too.
+
+> 💡 **Tip**: Use `@`-imports to share a common base file across multiple instruction files. For example, you could have a `@.github/instructions/shared-rules.md` that every other instruction file pulls in.
+
 **Finding community instruction files**: Browse [github/awesome-copilot](https://github.com/github/awesome-copilot) for pre-made instruction files covering .NET, Angular, Azure, Python, Docker, and many more technologies.
 
 ### Disabling Custom Instructions

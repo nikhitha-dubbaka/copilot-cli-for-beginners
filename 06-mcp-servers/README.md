@@ -924,6 +924,7 @@ These work when you're already inside `copilot`:
 | Command | What It Does |
 |---------|--------------|
 | `/mcp show` | Show all configured MCP servers and their status |
+| `/mcp list` | Show currently attached MCP servers and their status; can be run while Copilot is working |
 | `/mcp add` | Interactive setup for adding a new server |
 | `/mcp edit <server-name>` | Edit an existing server configuration |
 | `/mcp enable <server-name>` | Enable a disabled server (persists across sessions) |
