@@ -17,7 +17,7 @@ weight: 2
 
 > ⚠️ **Prerequisites**: Make sure you've completed **[Chapter 00: Quick Start](../00-quick-start/README.md)** first. You'll need GitHub Copilot CLI installed and authenticated before running the demos below.
 
-## 🎯 Learning Objectives
+## 🎯 Objetivos de aprendizaje
 
 Al final de este capítulo, podrás:
 

@@ -13,7 +13,7 @@ weight: 1
 
 ¡Bienvenido! En este capítulo, instalarás GitHub Copilot CLI (Interfaz de Línea de Comandos), iniciarás sesión con tu cuenta de GitHub y verificarás que todo funciona. Este es un capítulo de configuración rápida. ¡Una vez que estés en funcionamiento, las demostraciones reales comienzan en el Capítulo 01!
 
-## 🎯 Learning Objectives
+## 🎯 Objetivos de aprendizaje
 
 Al final de este capítulo, habrás:
 
@@ -25,7 +25,7 @@ Al final de este capítulo, habrás:
 
 ---
 
-## ✅ Prerequisites
+## ✅ Requisitos previos
 
 - **Cuenta de GitHub** con acceso a Copilot. [Ver opciones de suscripción](https://github.com/features/copilot/plans). Estudiantes/Profesores pueden acceder a Copilot Pro [gratis a través de GitHub Education](https://education.github.com/pack).
 - **Conceptos básicos de la terminal**: Familiaridad con comandos como `cd` y `ls`
@@ -43,11 +43,11 @@ Si ves "You don't have access to GitHub Copilot", necesitarás usar la opción g
 
 ---
 
-## Installation
+## Instalación
 
 > ⏱️ **Tiempo estimado**: La instalación toma 2-5 minutos. La autenticación añade otros 1-2 minutos.
 
-### GitHub Codespaces (Zero Setup)
+### GitHub Codespaces (Sin configuración)
 
 Si no quieres instalar ninguno de los requisitos previos, puedes usar GitHub Codespaces, que tiene GitHub Copilot CLI listo para usar (necesitarás iniciar sesión) y preinstala Python y pytest.
 
@@ -58,7 +58,7 @@ Si no quieres instalar ninguno de los requisitos previos, puedes usar GitHub Cod
 
 > 💡 **Verificar en Codespace**: Ejecuta `cd samples/book-app-project && python book_app.py help` para confirmar que Python y la aplicación de muestra funcionan.
 
-### Local Installation
+### Instalación local
 
 Sigue estos pasos si quieres ejecutar Copilot CLI en tu máquina local con las muestras del curso.
 
@@ -125,7 +125,7 @@ Reinicia tu shell después de añadir el autocompletado persistente. PowerShell 
 
 ---
 
-## Authentication
+## Autenticación
 
 Abre una ventana de terminal en la raíz del repositorio `copilot-cli-for-beginners`, inicia la CLI y permite el acceso a la carpeta.
 
@@ -159,9 +159,9 @@ Después de confiar en la carpeta, puedes iniciar sesión con tu cuenta de GitHu
 
 ---
 
-## Verify It Works
+## Verificar que funciona
 
-### Step 1: Test Copilot CLI
+### Paso 1: Probar Copilot CLI
 
 Ahora que has iniciado sesión, verifiquemos que Copilot CLI funciona para ti. En la terminal, inicia la CLI si no lo has hecho ya:
 
@@ -190,7 +190,7 @@ Después de recibir una respuesta, puedes salir de la CLI:
 
 **Salida esperada**: Una respuesta amigable que enumera las capacidades de Copilot CLI.
 
-### Step 2: Run the Sample Book App
+### Paso 2: Ejecutar la aplicación de libros de ejemplo
 
 El curso proporciona una aplicación de ejemplo que explorarás y mejorarás a lo largo del curso usando la CLI *(Puedes ver el código de esto en /samples/book-app-project)*. Verifica que la *aplicación de terminal de colección de libros en Python* funcione antes de comenzar. Ejecuta `python` o `python3` dependiendo de tu sistema.
 
@@ -203,7 +203,7 @@ python book_app.py list
 
 **Salida esperada**: Una lista de 5 libros que incluyen "The Hobbit", "1984" y "Dune".
 
-### Step 3: Try Copilot CLI with the Book App
+### Paso 3: Probar Copilot CLI con la aplicación de libros
 
 Primero vuelve a la raíz del repositorio (si ejecutaste el Paso 2):
 
@@ -237,7 +237,7 @@ Eso es todo por la instalación. La diversión real comienza en el Capítulo 01,
 
 ---
 
-## Troubleshooting
+## Solución de problemas
 
 ### "copilot: command not found"
 
